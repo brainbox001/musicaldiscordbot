@@ -26,7 +26,7 @@ const client = new Client({
 
 // Initialize DisTube with plugins
 const distube = new DisTube(client, {
-  ffmpeg: "C:\\Users\\User\\Desktop\\musicalldiscordbot\\node_modules\\ffmpeg-static\\ffmpeg.exe",
+  ffmpeg: ffmpeg,
   emitNewSongOnly: true,
   plugins: [new YouTubePlugin()]
 });
@@ -34,7 +34,6 @@ const distube = new DisTube(client, {
 // Ready Event
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
-  console.log("FFmpeg path:", ffmpeg);
 });
 
 // Handle slash commands
